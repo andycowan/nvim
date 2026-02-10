@@ -3,10 +3,10 @@ require "nvchad.autocmds"
 vim.api.nvim_create_autocmd("VimEnter", {
     callback = function()
         -- Only open the tree if no file was specified
-        if vim.fn.argc() == 0 then
-            vim.cmd("NvimTreeOpen")
-        end
-    end,
+       if vim.fn.argc() == 0 then
+           require("nvim-tree.api").tree.open()
+       end
+   end,
 })
 
 -- 2 spaces for JS/TS
