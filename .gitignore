@@ -1,0 +1,23 @@
+# Lazy plugin manager downloads
+lazy-lock.json
+
+# Mason LSP installations
+mason/
+
+# Compiled Lua bytecode
+*.luac
+
+# macOS
+.DS_Store
+
+# Undo history
+undodir/
+
+# Session files
+*.vim
+Session.vim
+
+# Temporary files
+*.swp
+*.swo
+*~
