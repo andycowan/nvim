@@ -7,7 +7,10 @@ local servers = {
   "lua_ls",
   "intelephense",
   "tailwindcss",
-  "ts_ls"
+  "ts_ls",
+  "pyright",
+  "ruff",
+  "marksman"
 }
 vim.lsp.enable(servers)
 

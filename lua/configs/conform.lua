@@ -13,6 +13,7 @@ local options = {
     yaml = { "prettier" },
     markdown = { "prettier" },
     blade = { "blade-formatter" },
+    python = { "ruff_format"},
   },
 
   formatters = {
@@ -22,12 +23,13 @@ local options = {
       stdin = false
     },
     prettier = {
-      prepend_args = { "--tab-width", "4", "--print-width", "120"}
+      prepend_args = {
+          "--config", vim.fn.expand("~/.config/prettier/.prettierrc")
+      },
     },
   },
 
-  format_on_save = {
-     timeout_ms = 500,
+  format_after_save = {
      lsp_fallback = true,
   },
 }

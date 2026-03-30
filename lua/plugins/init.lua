@@ -1,25 +1,68 @@
 return {
   {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        -- LSP servers
+        "lua-language-server",
+        "gopls",
+        "intelephense",
+        "tailwindcss-language-server",
+        "typescript-language-server",
+        "pyright",
+        -- Formatters
+        "stylua",
+        "gofumpt",
+        "goimports",
+        "prettier",
+        "ruff",
+        "marksman",
+      },
+    },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "go",
+        "gomod",
+        "gosum",
+        "php",
+        "blade",
+        "javascript",
+        "typescript",
+        "tsx",
+        "json",
+        "yaml",
+        "markdown",
+        "markdown_inline",
+        "python",
+      },
+    },
+  },
+  {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
-
-  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
       require "configs.lspconfig"
     end,
   },
-
   {
     "nvim-tree/nvim-tree.lua",
     opts = {
       git = {
         enable = true,
-        ignore = false,  -- Show git-ignored files
-        timeout = 400,   -- Git status update timeout
+        ignore = false, -- Show git-ignored files
+        timeout = 400, -- Git status update timeout
       },
       renderer = {
         highlight_git = true,
@@ -45,19 +88,12 @@ return {
   },
 
   {
-    "olimorris/codecompanion.nvim",
+    "MeanderingProgrammer/render-markdown.nvim",
     dependencies = {
-      "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
-      "nvim-telescope/telescope.nvim", -- Optional
-      {
-        "stevearc/dressing.nvim", -- Optional: improves UI
-        opts = {},
-      },
     },
-    config = function()
-      require "configs.codecompanion"
-    end,
+    ft = "markdown",
+    opts = {},
   },
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
